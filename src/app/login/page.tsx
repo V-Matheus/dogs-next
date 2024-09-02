@@ -1,7 +1,7 @@
 export default async function LoginPage() {
   return (
     <main>
-      <h1>Login</h1>
+      <h1>Criar</h1>
     </main>
   );
 }
