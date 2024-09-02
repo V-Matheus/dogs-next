@@ -1,7 +1,10 @@
+import LoginForm from '@/components/login/loginForm';
+
 export default async function LoginPage() {
   return (
-    <main>
-      <h1>Criar</h1>
-    </main>
+    <section className="animeLeft">
+      <h1 className="title">Login</h1>
+      <LoginForm />
+    </section>
   );
 }

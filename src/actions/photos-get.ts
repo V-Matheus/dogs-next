@@ -18,7 +18,5 @@ export default async function photoGet() {
   );
 
   const data = (await resposne.json()) as Photo[];
-  console.log(data);
-
   return data;
 }
