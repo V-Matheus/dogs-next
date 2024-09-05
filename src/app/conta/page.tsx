@@ -1,3 +1,11 @@
+'use client';
+import { useUSer } from '@/context/user-context';
+
 export default async function ContaPage() {
-  return <main><h1>Conta</h1></main>;
+  const { user } = useUSer();
+  return (
+    <main>
+      <h1>Conta: {user?.nome}</h1>
+    </main>
+  );
 }

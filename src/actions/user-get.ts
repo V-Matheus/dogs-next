@@ -3,6 +3,7 @@
 import { USER_GET, USER_POST } from '@/functions/api';
 import apiError from '@/functions/api-error';
 import { cookies } from 'next/headers';
+// import { cache } from 'react';
 
 export type User = {
   id: number;
@@ -33,3 +34,6 @@ export default async function userGet() {
     return apiError(error);
   }
 }
+
+// const UserGetCache = cache(userGet)
+// export default UserGetCache
