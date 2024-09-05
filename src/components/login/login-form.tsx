@@ -15,7 +15,7 @@ function FormButton() {
   return (
     <>
       {pending ? (
-        <Button disabled={pending}>Enviando</Button>
+        <Button disabled={pending}>Enviando...</Button>
       ) : (
         <Button>Entrar</Button>
       )}
@@ -39,8 +39,8 @@ export default function LoginForm() {
         <Input label="Usuário" name="username" type="text" />
         <Input label="Senha" name="password" type="password" />
 
-        <FormButton />
         <ErrorMessage error={state.error} />
+        <FormButton />
       </form>
       <Link className={styles.perdeu} href="/login/perdeu">
         Perdeu a senha?
@@ -48,7 +48,9 @@ export default function LoginForm() {
       <div className={styles.cadastro}>
         <h2 className={styles.subtitle}>Cadastre-se</h2>
         <p>Aida não possui conta? Cadastre-se no site.</p>
-        <Link className='button' href='/login/criar'>Cadastro</Link>
+        <Link className="button" href="/login/criar">
+          Cadastro
+        </Link>
       </div>
     </>
   );
