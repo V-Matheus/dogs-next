@@ -9,6 +9,7 @@ import styles from './conta-header.module.css';
 import { useMedia } from '@/hooks/useMedia';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import logout from '@/actions/logout';
 
 function getTitle(pathname: string) {
   switch (pathname) {
@@ -29,6 +30,10 @@ export default function ContaHeader() {
   React.useEffect(() => {
     setMobileMenu(false);
   }, [pathname]);
+
+  async function handleLogout() {
+    await logout()
+  }
 
   return (
     <header className={styles.header}>
@@ -60,7 +65,7 @@ export default function ContaHeader() {
           <AdicionarIcon />
           {mobile && 'Adicionar Foto'}
         </Link>
-        <button>
+        <button onClick={handleLogout}>
           <SairIcon />
           {mobile && 'Sair'}
         </button>
