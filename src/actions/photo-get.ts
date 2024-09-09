@@ -1,5 +1,3 @@
-'use server';
-
 import { PHOTO_GET, PHOTOS_GET } from '@/functions/api';
 import apiError from '@/functions/api-error';
 import { Photo } from './photos-get';
@@ -16,7 +14,7 @@ export type PhotoData = {
   comments: Comment[];
 };
 
-export default async function photoGet(id: string) {
+export async function photoGet(id: string) {
   try {
     const { url } = PHOTO_GET(id);
     const response = await fetch(url, {

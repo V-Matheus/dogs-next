@@ -1,11 +1,11 @@
-import photoGet from '@/actions/photo-get';
+import { photoGet } from '@/actions/photo-get';
 import PhotoContent from '@/components/photo/photo-content';
 import { notFound } from 'next/navigation';
 
 type PhotoIdParams = {
   params: {
     id: string;
-  };
+  };  
 };
 
 export async function generateMetadata({ params }: PhotoIdParams) {
