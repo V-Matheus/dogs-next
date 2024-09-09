@@ -1,6 +1,6 @@
 'use client';
 
-import photoGet, { Photo } from '@/actions/photos-get';
+import photosGet, { Photo } from '@/actions/photos-get';
 import FeedPhotos from './feed-photos';
 import { useEffect, useRef, useState } from 'react';
 import Loading from '@/components/helper/loading';
@@ -34,7 +34,7 @@ export default function Feed({ photos, user }: FeedProps) {
   useEffect(() => {
     if (page === 1) return;
     async function getPagePhotos(page: number) {
-      const actionData = await photoGet(
+      const actionData = await photosGet(
         { page, total: 6, user: 0 },
         {
           cache: 'no-store',

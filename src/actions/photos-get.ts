@@ -21,7 +21,7 @@ type PhotosGetParams = {
   user?: 0 | string;
 };
 
-export default async function photoGet(
+export default async function photosGet(
   { page = 1, total = 6, user = 0 }: PhotosGetParams = {},
   optionsFront?: RequestInit,
 ) {

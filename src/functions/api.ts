@@ -50,13 +50,9 @@ export function PHOTOS_GET({
   };
 }
 
-export function PHOTO_GET(id) {
+export function PHOTO_GET(id: string) {
   return {
     url: `${API_URL}/api/photo/${id}`,
-    options: {
-      method: 'GET',
-      cache: 'no-store',
-    },
   };
 }
 

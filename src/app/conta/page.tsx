@@ -1,4 +1,4 @@
-import photoGet from '@/actions/photos-get';
+import photosGet from '@/actions/photos-get';
 import userGet from '@/actions/user-get';
 import Feed from '@/components/feed/feed';
 import { Metadata } from 'next';
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default async function ContaPage() {
   const { data: user } = await userGet();
-  const { data } = await photoGet({ user: user?.username });
+  const { data } = await photosGet({ user: user?.username });
 
   return (
     <section>
