@@ -7,9 +7,7 @@ interface FeedPhotosProps {
   photos: Photo[];
 }
 
-export default async function FeedPhotos({ photos }: FeedPhotosProps) {
-  console.log(photos);
-
+export default function FeedPhotos({ photos }: FeedPhotosProps) {
   return (
     <ul className={`${styles.feed} animeLeft`}>
       {photos.map((photo, i) => (

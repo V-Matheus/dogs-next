@@ -12,10 +12,10 @@ export default async function ContaPage() {
   const { data: user } = await userGet();
   const { data } = await photoGet({ user: user?.username });
 
-  return (  
-    <main>
+  return (
+    <section>
       {data?.length ? (
-        <Feed photos={data} />
+        <Feed photos={data} user={user?.username} />
       ) : (
         <div>
           <p
@@ -23,9 +23,15 @@ export default async function ContaPage() {
           >
             Nenhuma foto encontrada
           </p>
-          <Link href={'/conta/postar'} style={{display: 'inline-block'}} className='button'>Postar Foto</Link>
+          <Link
+            href={'/conta/postar'}
+            style={{ display: 'inline-block' }}
+            className="button"
+          >
+            Postar Foto
+          </Link>
         </div>
       )}
-    </main>
+    </section>
   );
 }
